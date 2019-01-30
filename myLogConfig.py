@@ -38,3 +38,11 @@ class ConfigMyLog():
                 format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s: %(message)s',
                 datefmt='%a, %d %b %Y %H:%M:%S',
                 handlers=[filehandler,console])
+
+   def addExtraLog(self,loggerName,logFileName='extra',logLevel=logging.CRITICAL):
+        #beside default log, add extra log. the loggerName can NOT be '__name__'
+        extraFile=os.path.abspath(self._logFilePath+r'/'+logFileName+r'.log')
+        filehandler = logging.FileHandler(extraFile,mode='w',encoding='utf8',delay=False)
+        extraFormatter = logging.Formatter('%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s: %(message)s')
+        filehandler.setFormatter(extraFormatter)
+        logging.getLogger(loggerName).handlers=[filehandler]
