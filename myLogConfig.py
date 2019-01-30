@@ -13,10 +13,6 @@ class ConfigMyLog():
     def logfilepath(self):
         return self._logFilePath
 
-    @property
-    def logger(self):
-        return self._logger
-
 
     def __init__(self,logFileName='default',withFolder=True,consoleLevel=logging.DEBUG,logLevel=logging.DEBUG):
         if withFolder:
