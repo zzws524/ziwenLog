@@ -8,7 +8,7 @@ Even though, I prefer to wrap the config into a class.
 
 #how to use:
 import logging
-from LogConfigPkg import myLogConfig
+from ziwenLog import myLogConfig
 
 class A:
     def __init__(self):
