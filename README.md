@@ -16,7 +16,7 @@ class A:
         self.logger.debug('class a init')
 
 if __name__=='__main__':
-    myLogConfig=myLogConfig.ConfigMyLog(logFileName='test')
+    myLogConfig=myLogConfig(logFileName='test')
     logger=logging.getLogger(__name__)
     logger.info('start main')
     tmpA=A()

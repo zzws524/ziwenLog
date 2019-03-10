@@ -39,7 +39,7 @@ class ConfigMyLog():
                 datefmt='%a, %d %b %Y %H:%M:%S',
                 handlers=[filehandler,console])
 
-   def addExtraLog(self,loggerName,logFileName='extra',logLevel=logging.CRITICAL):
+    def addExtraLog(self,loggerName,logFileName='extra',logLevel=logging.CRITICAL):
         #beside default log, add extra log. the loggerName can NOT be '__name__'
         extraFile=os.path.abspath(self._logFilePath+r'/'+logFileName+r'.log')
         filehandler = logging.FileHandler(extraFile,mode='w',encoding='utf8',delay=False)
