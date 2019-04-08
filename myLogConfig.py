@@ -16,12 +16,12 @@ class ConfigMyLog():
 
     def __init__(self,logFileName='default',withFolder=True,consoleLevel=logging.DEBUG,logLevel=logging.DEBUG):
         if withFolder:
-            self._logFilePath=r'./'+str(time.strftime("%Y%m%d%H%M%S", time.localtime()))
+            self._logFilePath=r'./Logs/'+str(time.strftime("%Y%m%d%H%M%S", time.localtime()))
             if not os.path.exists(self._logFilePath):
                 os.makedirs(self._logFilePath)
             self._logFile=os.path.abspath(self._logFilePath+r'/'+logFileName+r'.log')
         else:
-            self._logFilePath=r'./'
+            self._logFilePath=r'./Logs/'
             self._logFile=os.path.abspath(r'./'+logFileName+r'.log')
         self.__setupDefaultLevel(consoleLevel,logLevel)
 
