@@ -1,5 +1,5 @@
 # myLogConfig
-Configured logging for future python script.
+Configured logging for python script.
 
 Loggers are never instantiated directly, but always through the module-level function logging.getLogger(name). Multiple calls to getLogger() with the same name will always return a reference to the same Logger object.
 
