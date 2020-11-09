@@ -7,17 +7,9 @@ Even though, I prefer to wrap the config into a class.
 
 
 #how to use:
-import logging
-from ziwenLog import myLogConfig
+from ziwenLog.myLogConfig import ConfigMyLog
 
-class A:
-    def __init__(self):
-        self.logger=logging.getLogger(__name__)
-        self.logger.debug('class a init')
-
-if __name__=='__main__':
-    myLogConfig=myLogConfig.ConfigMyLog(logFileName='test')
-    logger=logging.getLogger(__name__)
-    logger.info('start main')
-    tmpA=A()
-
+my_logger = ConfigMyLog('logger_main', logFileName='testMyLog.log',maxBytes=3*1024, backupCount=3).give_me_a_logger()
+for i in range(40):
+    my_logger.debug(str(i))
+    my_logger.debug(r'It is only for test purpose')
