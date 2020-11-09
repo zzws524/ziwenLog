@@ -7,9 +7,11 @@ Even though, I prefer to wrap the config into a class.
 
 
 #how to use:
+
 from ziwenLog.myLogConfig import ConfigMyLog
 
 my_logger = ConfigMyLog('logger_main', logFileName='testMyLog.log',maxBytes=3*1024, backupCount=3).give_me_a_logger()
+
 for i in range(40):
     my_logger.debug(str(i))
     my_logger.debug(r'It is only for test purpose')
